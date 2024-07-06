@@ -1,0 +1,85 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  color: white;
+}
+body {
+  background-color: black;
+}
+
+.container {
+  max-width: 70vw;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+}
+.inner {
+
+    border: 2px solid gray;
+    width: 50vw;
+    margin: auto;
+}
+.inputField {
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 10px;
+  /* flex-direction: column; */
+}
+label span {
+  color: gray;
+  font-size: 18px;
+  margin: 10px 10px;
+}
+.inputField > input {
+  padding: 5px;
+  font-size: 17px;
+  color: black;
+  border-radius: 5px;
+  margin: 10px 0px 10px 0px;
+}
+.btn button {
+  color: black;
+  padding: 5px;
+  font-size: 16px;
+  border: none;
+  margin-top: 10px;
+  border-radius: 4px;
+  transition: all 0.6s;
+  border: 3px solid white;
+}
+.btn button:hover {
+  border: 3px solid yellow;
+  border-radius: 18px;
+  transition: all 0.6s;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+.Result h2 {
+  color: gray;
+  margin-top: 50px;
+}
+.Result div {
+  margin: 10px;
+  color: gray;
+  font-size: 20px;
+}
+.DynamicDiv {
+    color: rgb(255, 255, 0);
+    background-color: rgb(0, 0, 0);
+    border: 2px solid gray;
+    border-radius: 10px;
+    width: 100px;
+    margin: auto;
+    margin-top: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.Answer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
