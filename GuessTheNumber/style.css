@@ -40,6 +40,9 @@ body {
   font-weight: 600;
   transition: all 0.8s;
 }
+.btn {
+  cursor: pointer;
+}
 /* .btn:hover {
   color: white;
   background-color: black;
@@ -66,6 +69,7 @@ body {
   position: relative;
   width: auto;
 }
+
 .position {
   font-size: 18px;
   position: absolute;
@@ -74,12 +78,17 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.Greater {
-  display: none;
+/* .Greater {
+  visibility: hidden;
 }
 .Less {
-  display: none;
+    visibility: hidden;
+} */
+
+.position {
+  visibility: hidden;
 }
+
 .count {
   display: flex;
   gap: 20px;

@@ -5,7 +5,9 @@ const Less = document.querySelector('.Less')
 const show = document.querySelector('.Show')
 const Previous = document.querySelector('.Previous')
 const remaining = document.querySelector('.remaining')
+const position = document.querySelectorAll('.position')
 let length = 10
+var previousGuess = []
 GenerateRandomNumber = () => {
     return Math.floor(Math.random() * 101);
 }
@@ -18,6 +20,7 @@ enter = () => {
             if (isNaN(value.value)) {
                 alert('enter Number value: ')
             } else {
+                previousGuess.push(value.value)
                 playGame(value.value)
             }
         }
@@ -27,21 +30,20 @@ enter = () => {
     })
 }
 enter()
-var previousGuess = []
 playGame = (Guess) => {
-    previousGuess.push(Guess)
-    show.style.height = '10vh'
+    position.forEach(element => {
+        element.style.visibility = 'visible'
+    });
+    show.style.height = '40px'
     if (RandomNumber > Guess) {
-        Less.classList.add('Less')
+        Less.innerHTML = ''
         console.log('guess Number is Less than ')
-        Grater.classList.remove('Greater')
         Grater.innerText = `guess Number is Less than `
     }
     else if (RandomNumber < Guess) {
-        Grater.classList.add('Greater')
+        Grater.innerHTML = ''
         console.log('guess number is greater then')
         Less.innerText = `guess number is greater then`
-        Less.classList.remove('Less')
     }
     else if (RandomNumber == Guess) {
         showResult()
@@ -53,7 +55,9 @@ playGame = (Guess) => {
 }
 
 showResult = () => {
-    show.style.visibility = 'hidden'
+    position.forEach(element => {
+        element.style.visibility = 'hidden'
+    });
     show.style.height = '0px'
     const div = document.createElement('div')
     div.classList.add('ans')
@@ -88,7 +92,22 @@ disableBTN = () => {
     btn.setAttribute('disabled', '')
 }
 
-//in beta not working 
-// document.querySelector('.PlayAgain').addEventListener('click', () => {
-    
-// })
+document.querySelector('.PlayAgain').addEventListener('click', () => {
+    previousGuess = []
+    // RandomNumber = GenerateRandomNumber()
+    // console.log(RandomNumber)
+    btn.removeAttribute('disabled', '')
+    value.value = ''
+    position.forEach(element => {
+        element.removeAttribute("style");
+        remaining.innerText = `Guesses remaining ${10}`
+        length = 10
+    });
+    try {
+        show.style.height = '0px'
+        document.querySelector('.count').remove()
+        document.querySelector('.ans').remove()
+    } catch (error) {
+        console.log('error');
+    }
+})
