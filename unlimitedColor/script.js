@@ -23,7 +23,9 @@ GetColorCode = () => {
 
 let StartMe
 ChangeColor = () => {
-    StartMe = setInterval(ChangingColor, 1000);
+    if(!StartMe){
+        StartMe = setInterval(ChangingColor, 1000);
+    }
 
     function ChangingColor() {
         const ColorCode = GetColorCode()
@@ -31,7 +33,10 @@ ChangeColor = () => {
         const code = document.querySelector('.colorCode').innerHTML = `${ColorCode}`
     }
 }
-StopChangeColor = () => clearInterval(StartMe)
+StopChangeColor = () => {
+    clearInterval(StartMe)
+     StartMe = null
+}
 
 Start.addEventListener('click', () => ChangeColor())
 Stop.addEventListener('click', () => StopChangeColor())

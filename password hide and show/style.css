@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    justify-content: center;
+}
+input {
+    width: 200px;
+    padding: 5px;
+    font-family: sans-serif;
+    font-size: 17px;
+    border-radius: 5px;
+    border: none;
+    border: 1px solid gray;
+    position: relative;
+}
+.container img {
+    width: 20px;
+    position: absolute;
+    top: 5px;
+    left: 182px;
+    cursor: pointer;
+}
+.Box {
+    width: 200px;
+    margin: auto;
+}
+.box {
+    position: relative;
+}
+.Hide {
+    visibility: hidden
+}
